@@ -1,8 +1,11 @@
+import { useState } from "react";
+
 function InputBox() {
     return (
-        <div>
-            <h1>Hi</h1>
-        </div>
+        <form onSubmit={handleSend}>
+            <input type="text"/>
+            <button type="submit"></button>
+        </form>
     );
 }
 
