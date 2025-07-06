@@ -1,3 +1,4 @@
+import "./MessageList.css";
 import MessageBubble from "./MessageBubble.jsx";
 function MessageList({messages}) {
     return (
