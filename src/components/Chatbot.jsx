@@ -1,5 +1,6 @@
 import MessageList from "./MessageList.jsx";
 import InputBox from "./InputBox.jsx";
+import "./Chatbot.css";
 
 const messages = [
   { id: 1, sender: "user", text: "I'm looking for a 2-bedroom in Toronto" },
@@ -8,9 +9,12 @@ const messages = [
 
 function Chatbot() {
     return (
-        <div>
-           <InputBox/>
+      <div>
+        <h1>How can we help you today?</h1>
+        <div className="Chatbot">
            <MessageList messages={messages}/>
+           <InputBox/>
+        </div>
         </div>
     )
 }

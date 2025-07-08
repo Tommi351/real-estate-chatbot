@@ -1,5 +1,23 @@
 .MessageBubble {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: block;
+  width: fit-content;
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 1rem;
+  word-wrap: break-word;
+}
+
+.user-style {
+    background-color: aqua;
+    border: 2px solid black;
+    margin-left: auto;
+    align-self: flex-end;
+}
+
+.bot-style {
+    background-color: green;
+    color: white;
+    border: 2px solid purple;
+    margin-right: auto;
+    align-self: flex-start;
 }

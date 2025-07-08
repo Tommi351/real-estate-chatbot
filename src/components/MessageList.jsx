@@ -4,7 +4,7 @@ function MessageList({messages}) {
     return (
         <div className="MessageList">
             {messages.map((m) => (
-                <MessageBubble key={m.id} {...m}/>
+                <MessageBubble key={m.id} {...m} />
             ))}
         </div>
     )

@@ -1,0 +1,8 @@
+.Chatbot {
+    display: flex;
+    flex-direction: column;
+    min-width: 1000px;
+    border: 2px dashed blue;
+    margin: auto;
+    padding: 50px 50px;
+}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./InputBox.css";
 function InputBox() {
     const [input, setInput] = useState("");
     function onChange(evt) {
@@ -11,7 +11,7 @@ function InputBox() {
         setInput("");
     }
     return (
-        <form onSubmit={handleSend}>
+        <form onSubmit={handleSend} className="InputBox">
             <input type="text" value={input} onChange={onChange}/>
             <button type="submit">Send</button>
         </form>
