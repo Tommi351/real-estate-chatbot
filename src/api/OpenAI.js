@@ -4,6 +4,12 @@ const fetchMessages = async () => {
         model: "gpt-3.5-turbo",
         messages: [
             {
+            role: "system",
+            content: "Act like a real estate agent"
+         }
+        ]
+        [
+            {
             role: "user",
             content: input
          }

@@ -11,7 +11,7 @@ function InputBox({onSendMessage}) {
             return;
         }
         onSendMessage(input);
-        setInput("")
+        setInput("");
     }
     return (
         <form onSubmit={handleSend} className="InputBox">

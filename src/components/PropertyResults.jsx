@@ -3,7 +3,7 @@ function PropertyResults({properties}) {
     return (
         <ul>
             {properties.map((p) => (
-             <PropertyCard {...p} 
+             <PropertyCard key={p.id} {...p} 
              />
             ))}
         </ul>
