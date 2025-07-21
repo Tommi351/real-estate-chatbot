@@ -4,9 +4,8 @@ import PropertyResults from "./PropertyResults.jsx";
 import "./Chatbot.css";
 import { useState } from "react";
 import { fetchListings } from "../api/realEstateAPI.js";
-import {parseInput} from "../../utils/parseInput.js";
-import {fetchMessages} from "../api/OpenAI.js";
-
+import { parseInput } from "../../utils/parseInput.js";
+import { fetchMessages } from "../api/OpenAI.js";
 
 function Chatbot() {
   const [messages, setMessages] = useState([
@@ -31,12 +30,27 @@ function Chatbot() {
      setMessages(updatedMessages);
     // Parse User Input
       const result = parseInput(input);
+      if (!result.location) {
+        return;
+       }
       const allListings = await fetchListings();
+
+      // Filter user input by location
       const filtered = allListings.filter(listing => {
-        if (listing.city === result.location) {
-          return true;
-        }
-      })
+        const matchesLocation = listing.location.toLowerCase().includes(result.location.toLowerCase());
+          let matchesPrice = true;
+    if (result.priceRange !== null) {
+      // Assume listing.price is a string like '$750,000' — parse it
+      const priceNum = Number(listing.price.replace(/[$,]/g, ""));
+      matchesPrice = priceNum <= result.priceRange;
+    }
+      let matchesBedrooms = true;
+    if (result.bedrooms !== null) {
+      matchesBedrooms = listing.bedrooms === result.bedrooms;
+    }
+
+    return matchesLocation && matchesPrice && matchesBedrooms;
+      });
       setProperties(filtered);
     }
     return (
