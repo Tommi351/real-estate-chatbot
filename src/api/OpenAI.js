@@ -1,4 +1,6 @@
-const fetchMessages = async (messages) => {
+import axios from "axios";
+export const fetchMessages = async (messages) => {
+    const apiKey = import.meta.env.VITE_APP_OPENAI_API_KEY;
     const formattedMessages = [
   { role: "system", content: "Act like a real estate agent, help the user get their dream home" },
   ...messages.map(msg => ({
@@ -6,8 +8,11 @@ const fetchMessages = async (messages) => {
     content: msg.text
   }))
 ];
+
+ console.log("Sending messages to GPT:", formattedMessages);
+
     try {
-        const res = await axios.post("ChatGPT API", 
+        const res = await axios.post("https://api.openai.com/v1/chat/completions", // Fix this axios.post() tomorrow on July 20th
         {
         model: "gpt-3.5-turbo",
         messages: formattedMessages,
@@ -20,10 +25,11 @@ const fetchMessages = async (messages) => {
         {
          headers: { 
                 "Content-Type": "application/json",
-                "Authorization": "Bearer MY-API-KEY"
+                Authorization: `Bearer ${apiKey}`
             }
          }
         );
+
         return res.data.choices[0].message.content;
     }
      catch (err) {
