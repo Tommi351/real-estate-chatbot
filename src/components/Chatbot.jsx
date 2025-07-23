@@ -33,8 +33,8 @@ function Chatbot() {
       if (!result.location) {
         return;
        }
-      const allListings = await fetchListings();
 
+      const allListings = await fetchListings();
       // Filter user input by location
       const filtered = allListings.filter(listing => {
         const matchesLocation = listing.location.toLowerCase().includes(result.location.toLowerCase());

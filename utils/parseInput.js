@@ -1,6 +1,6 @@
 export function parseInput(text) {
    let normalized = text.toLowerCase();
-    const cities = ["Toronto", "Scarborough", "North York"];
+    const cities = ["Toronto", "Mississauga", "Ottawa", "Vancouver", "Calgary", "Montreal", "Halifax"];
     let location = null;
     let priceRange = null;
     let bedrooms = null;
