@@ -9,6 +9,8 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "sqft": 900,
+    "lat" : 43.5852972,
+    "lng" : -79.64498379999999,
     "description": "Beautiful condo with floor-to-ceiling windows and stunning skyline views.",
     "agent": "Samantha Lee",
     "contact": "416-555-1234"
@@ -23,6 +25,8 @@
     "bedrooms": 4,
     "bathrooms": 3,
     "sqft": 2400,
+    "lat" : 43.5853,
+    "lng" : 79.6450,
     "description": "Bright and welcoming family home with finished basement and backyard deck.",
     "agent": "Rajiv Patel",
     "contact": "905-555-7890"
@@ -37,6 +41,8 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1600,
+    "lat": 45.355551035056294,
+    "lng": -75.79130007589924,
     "description": "Well-maintained bungalow with a large yard and updated kitchen.",
     "agent": "Laura Bennett",
     "contact": "613-555-9876"
@@ -51,6 +57,8 @@
     "bedrooms": 5,
     "bathrooms": 4,
     "sqft": 3200,
+    "lat": 49.27150947857053, 
+    "lng": -123.12753828894824,
     "description": "Stunning waterfront mansion with private dock and mountain views.",
     "agent": "Christine Wong",
     "contact": "604-555-3456"
@@ -65,6 +73,8 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1400,
+    "lat": 51.05957880378351, 
+    "lng": -114.14634074647526,
     "description": "Great starter home close to schools, shopping, and public transit.",
     "agent": "Marcus Chen",
     "contact": "403-555-2468"
@@ -135,6 +145,8 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1500,
+    "lat": 45.630525136115914, 
+    "lng": -122.52167320272248, 
     "description": "Cozy bungalow with spacious backyard and modern updates.",
     "agent": "Liam Chen",
     "contact": "604-555-5678"
@@ -163,6 +175,8 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "sqft": 950,
+    "lat" : 43.5852972,
+    "lng" : -79.64498379999999,
     "description": "Condo overlooking Lake Ontario with balcony and fitness amenities.",
     "agent": "Emily Chan",
     "contact": "416-555-4567"
@@ -177,6 +191,8 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1500,
+    "lat" : 45.40138156835962, 
+    "lng" : -75.63423521993448,
     "description": "Perfect starter home close to schools and parks.",
     "agent": "Michael Thompson",
     "contact": "613-555-3322"
@@ -191,6 +207,8 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1300,
+    "lat": 49.85591834592015, 
+    "lng": -119.4905678465732,
     "description": "Modern apartment with panoramic city and mountain views.",
     "agent": "Sophie Lee",
     "contact": "604-555-9988"
@@ -205,6 +223,8 @@
     "bedrooms": 3,
     "bathrooms": 3,
     "sqft": 1800,
+    "lat": 50.874178764693255, 
+    "lng": -114.07745768881867,
     "description": "Spacious townhouse with open-concept design and garage.",
     "agent": "David Brown",
     "contact": "403-555-1212"
@@ -247,6 +267,8 @@
     "bedrooms": 3,
     "bathrooms": 3,
     "sqft": 2000,
+    "lat" : 43.5852972,
+    "lng" : -79.64498379999999,
     "description": "Luxurious penthouse with floor-to-ceiling windows and rooftop access.",
     "agent": "Linda Wu",
     "contact": "416-555-9987"
@@ -261,6 +283,8 @@
     "bedrooms": 4,
     "bathrooms": 2,
     "sqft": 2100,
+    "lat": 43.5853,
+    "lng": 79.6450,
     "description": "Perfect home with backyard oasis and spacious kitchen.",
     "agent": "Raj Singh",
     "contact": "905-555-7766"
@@ -275,6 +299,8 @@
     "bedrooms": 1,
     "bathrooms": 1,
     "sqft": 700,
+    "lat": 45.437760812335625, 
+    "lng": -75.6722473892446,
     "description": "Great location close to transit and downtown.",
     "agent": "Emily Rogers",
     "contact": "613-555-4411"
@@ -289,6 +315,8 @@
     "bedrooms": 4,
     "bathrooms": 3,
     "sqft": 2400,
+    "lat": 49.23527319679944, 
+    "lng": -123.03193294662296,
     "description": "Quiet neighborhood with spacious interiors and garden.",
     "agent": "Oliver Martin",
     "contact": "604-555-3344"
@@ -303,6 +331,8 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "sqft": 1100,
+    "lat": 51.04851625783074, 
+    "lng": -114.08552996181976,
     "description": "Access to gym, pool, and close to public transit.",
     "agent": "Samantha Green",
     "contact": "403-555-2222"
@@ -345,6 +375,8 @@
     "bedrooms": 4,
     "bathrooms": 3,
     "sqft": 2300,
+    "lat" : 43.5852972,
+    "lng" : -79.64498379999999,
     "description": "Family-friendly neighborhood with excellent schools nearby.",
     "agent": "Ethan White",
     "contact": "416-555-4455"
@@ -359,6 +391,8 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "sqft": 900,
+    "lat": 43.5950,
+    "lng": 79.6391,
     "description": "Close to shopping and transit with updated appliances.",
     "agent": "Sophia Liu",
     "contact": "905-555-3311"
@@ -373,6 +407,8 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "sqft": 1400,
+    "lat": 45.42778983732943,
+    "lng": -75.68559001808121,
     "description": "Bright and airy with balcony and modern kitchen.",
     "agent": "Kevin Murray",
     "contact": "613-555-7711"
@@ -387,6 +423,8 @@
     "bedrooms": 3,
     "bathrooms": 3,
     "sqft": 1900,
+    "lat": 49.26455778690996,
+    "lng": -123.12681896196422,
     "description": "Close to parks, with rooftop terrace and modern amenities.",
     "agent": "Maya Johnson",
     "contact": "604-555-9981"
@@ -401,6 +439,8 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1600,
+    "lat": 51.02578733063109,
+    "lng": -113.98709996182164,
     "description": "Quiet neighborhood with large yard and updated interiors.",
     "agent": "Brian Clark",
     "contact": "403-555-4456"
@@ -443,6 +483,8 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1500,
+    "lat" : 43.5852972,
+    "lng" : -79.64498379999999,
     "description": "High-rise living with concierge and gym access.",
     "agent": "Jessica Park",
     "contact": "416-555-7788"
@@ -457,6 +499,8 @@
     "bedrooms": 4,
     "bathrooms": 3,
     "sqft": 2100,
+    "lat" : 43.5853,
+    "lng" : 79.6450,
     "description": "Open floor plan with large kitchen and backyard patio.",
     "agent": "Kevin Wong",
     "contact": "905-555-9922"
@@ -471,6 +515,8 @@
     "bedrooms": 1,
     "bathrooms": 1,
     "sqft": 650,
+    "lat": 45.416288000143766, 
+    "lng": -75.69603500644111,
     "description": "Close to Parliament and transit, great investment property.",
     "agent": "Laura Mitchell",
     "contact": "613-555-4401"
@@ -485,6 +531,8 @@
     "bedrooms": 4,
     "bathrooms": 3,
     "sqft": 2300,
+    "lat": 49.27150947857053, 
+    "lng": -123.12753828894824,
     "description": "Beautiful landscaped garden and modern kitchen appliances.",
     "agent": "Andrew Smith",
     "contact": "604-555-7710"
@@ -499,6 +547,8 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1700,
+    "lat": 51.06021537914902, 
+    "lng": -114.14601120229568,
     "description": "Community playground and close to schools.",
     "agent": "Jessica Taylor",
     "contact": "403-555-9933"
@@ -541,6 +591,8 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1600,
+    "lat" : 43.5852972,
+    "lng" : -79.64498379999999,
     "description": "Newly renovated with open plan living and close to parks.",
     "agent": "Victor Hernandez",
     "contact": "416-555-6612"
@@ -555,6 +607,8 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "sqft": 900,
+    "lat": 43.5950,
+    "lng": 79.6391,
     "description": "Close to transit and shopping with modern finishes.",
     "agent": "Tina Lee",
     "contact": "905-555-4422"
