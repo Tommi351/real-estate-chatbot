@@ -6,6 +6,7 @@ import { useState } from "react";
 import { fetchListings } from "../api/realEstateAPI.js";
 import { parseInput } from "../../utils/parseInput.js";
 import { fetchMessages } from "../api/OpenAI.js";
+import Maps from "./Map.jsx";
 
 function Chatbot() {
   const [messages, setMessages] = useState([
@@ -36,7 +37,7 @@ function Chatbot() {
 
       const allListings = await fetchListings();
       // Filter user input by location
-      const filtered = allListings.filter(listing => {
+      const filtered = allListings.filter((listing) => {
         const matchesLocation = listing.location.toLowerCase().includes(result.location.toLowerCase());
           let matchesPrice = true;
     if (result.priceRange !== null) {

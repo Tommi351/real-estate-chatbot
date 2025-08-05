@@ -1,15 +1,21 @@
 import './App.css'
 import Chatbot from "./components/Chatbot.jsx";
 import Maps from './components/Map.jsx';
-import {APIProvider, AdvancedMarker, Pin} from '@vis.gl/react-google-maps';
+import {APIProvider} from '@vis.gl/react-google-maps';
+import listings from  "../src/data/listings.json";
+import {convertToPois} from '../utils/convertToPois.js';
+
+ const pois = convertToPois(listings);
 function App() {
   const apiKey = import.meta.env.VITE_APP_GOOGLEMAPS_API_KEY
   return (
-    <div className="app" style={{ height: "350px", width: "350px" }}>
+    <div className="app">
+      <Chatbot/>
       <APIProvider apiKey={apiKey}>
-        <Maps/>
+        <div style={{ height: "350px", width: "400px" }}>
+        <Maps pois={pois}/>
+        </div>
        </APIProvider>
-        {/* <Chatbot/> */}
    </div>
   );
 }
