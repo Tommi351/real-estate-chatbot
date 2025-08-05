@@ -89,6 +89,8 @@
     "bedrooms": 1,
     "bathrooms": 1,
     "sqft": 850,
+    "lat": 45.63327420940993, 
+    "lng": -73.60392673340942,
     "description": "Open-concept loft with exposed brick, modern finishes, and a rooftop terrace.",
     "agent": "Jean-Pierre Dubois",
     "contact": "514-555-1324"
@@ -103,6 +105,8 @@
     "bedrooms": 4,
     "bathrooms": 3,
     "sqft": 2100,
+    "lat": 44.788147532183324, 
+    "lng": -63.75446706230821,
     "description": "Quiet cul-de-sac home with finished basement and double garage.",
     "agent": "Natalie MacDonald",
     "contact": "902-555-4321"
@@ -117,6 +121,8 @@
     "bedrooms": 6,
     "bathrooms": 4,
     "sqft": 2800,
+    "lat":  41.81258529144973, 
+    "lng": -71.41165631834197,
     "description": "Two legal units generating strong rental income. Ideal for investors.",
     "agent": "Fatima Hassan",
     "contact": "204-555-9012"
@@ -131,6 +137,8 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1500,
+    "lat": 43.764783542589534, 
+    "lng": -79.39540074703943,
     "description": "Luxury finishes and smart home tech in prime location.",
     "agent": "Alex Rivera",
     "contact": "416-555-9012"
@@ -161,6 +169,8 @@
     "bedrooms": 4,
     "bathrooms": 3,
     "sqft": 2200,
+    "lat": 45.48053090929787, 
+    "lng": -73.58397904691317, 
     "description": "High-end penthouse with panoramic city views and private rooftop terrace.",
     "agent": "Isabelle Tremblay",
     "contact": "514-555-7890"
@@ -239,6 +249,8 @@
     "bedrooms": 2,
     "bathrooms": 1,
     "sqft": 850,
+    "lat": 45.52846783341167, 
+    "lng": -73.56076794598101, 
     "description": "Historic building with modern finishes, walking distance to downtown.",
     "agent": "Julie Tremblay",
     "contact": "514-555-6677"
@@ -253,6 +265,8 @@
     "bedrooms": 4,
     "bathrooms": 3,
     "sqft": 2500,
+    "lat": 44.62185818893802, 
+    "lng": -63.59973889115635,
     "description": "Stunning waterfront property with private dock and large deck.",
     "agent": "James MacDonald",
     "contact": "902-555-2333"
@@ -340,13 +354,15 @@
   {
     "id": 23,
     "title": "Loft-Style Condo in Montreal",
-    "price": "$650,000",
+    "price": "$894,000",
     "rating": "4.6 ⭐",
     "location": "Montreal, QC",
     "imageUrl": "https://shorturl.at/bwyY5",
     "bedrooms": 1,
     "bathrooms": 1,
     "sqft": 750,
+    "lat": 45.51993355143369, 
+    "lng": -73.70927681992562,
     "description": "Open-concept loft with high ceilings and modern finishes.",
     "agent": "Marc Beaulieu",
     "contact": "514-555-5566"
@@ -361,6 +377,8 @@
     "bedrooms": 2,
     "bathrooms": 1,
     "sqft": 900,
+    "lat": 44.655894212808896,
+    "lng":  -63.61916760464611,
     "description": "Quiet rural setting with cozy interiors and modern kitchen.",
     "agent": "Lisa Graham",
     "contact": "902-555-8877"
@@ -455,6 +473,8 @@
     "bedrooms": 1,
     "bathrooms": 1,
     "sqft": 700,
+    "lat": 45.52779873339982, 
+    "lng": -73.56085388923786,
     "description": "Unique architectural details and close to cafes and shops.",
     "agent": "Isabelle Roy",
     "contact": "514-555-3399"
@@ -469,6 +489,8 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1400,
+    "lat": 44.5859188871189, 
+    "lng": -63.59048144697945,
     "description": "Great family home with large backyard and garage.",
     "agent": "Sarah MacKenzie",
     "contact": "902-555-6622"
@@ -563,6 +585,8 @@
     "bedrooms": 1,
     "bathrooms": 1,
     "sqft": 780,
+    "lat": 45.54435219544358, 
+    "lng": -73.53697864690844,
     "description": "Exposed brick and hardwood floors with open concept.",
     "agent": "Nicolas Dupont",
     "contact": "514-555-5544"
@@ -577,6 +601,8 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1800,
+    "lat": 44.61324605814516,
+    "lng":  -63.573447389305684,
     "description": "Peaceful setting with deck overlooking the water.",
     "agent": "Karen White",
     "contact": "902-555-8871"
