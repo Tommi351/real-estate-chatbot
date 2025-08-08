@@ -36,7 +36,7 @@ function Chatbot() {
        }
 
       const allListings = await fetchListings();
-      // Filter user input by location
+      // Filter user input by location, price, bedrooms, bathrooms
       const filtered = allListings.filter((listing) => {
         const matchesLocation = listing.location.toLowerCase().includes(result.location.toLowerCase());
           let matchesPrice = true;
