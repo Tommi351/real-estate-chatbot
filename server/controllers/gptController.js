@@ -7,7 +7,7 @@ const getMessages = async (messages) => {
     const formattedMessages = [
   { role: "system", content: "Act like a real estate agent, help the user get their dream home" },
   ...messages.map(msg => ({
-    role: msg.sender === 'user' ? 'user' : 'assistant', // map your sender to GPT role
+    role: msg.sender === 'user' ? 'user' : 'assistant', 
     content: msg.text
   }))
 ];
