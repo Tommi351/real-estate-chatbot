@@ -30,12 +30,3 @@
   background-color: #1741b6;
 }
 
-@media (min-width: 700px) {
-  .InputBox {
-  display: flex;
-  padding: 10px;
-  gap: 8px;
-  border-top: 1px solid #ccc;
-  background-color: #f8f8f8;
-  }
-}
