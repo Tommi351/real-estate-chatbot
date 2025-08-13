@@ -72,8 +72,8 @@ function Chatbot() {
           <Maps result={result} pois={pois}/>
             </div>
           </APIProvider>
-           <InputBox onSendMessage={handleUserMessage}/>
           <PropertyResults properties={properties}/>
+           <InputBox onSendMessage={handleUserMessage}/>
         </div>
         </div>
     )

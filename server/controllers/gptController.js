@@ -12,8 +12,6 @@ const getMessages = async (messages) => {
   }))
 ];
 
- console.log("Sending messages to GPT:", formattedMessages);
-
     try {
         const response = await client.chat.completions.create(
         {
