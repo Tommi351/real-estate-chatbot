@@ -6,3 +6,29 @@
     margin: auto;
     padding: 50px 50px;
 }
+
+@media (max-width: 460px) {
+    .Chatbot {
+        min-width: 100%;
+        padding: 15px;
+    }
+}
+@media (max-width: 768px) {
+    .Chatbot {
+        min-width: 80%;
+        padding: 30px 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .Chatbot {
+        min-width: 70%;
+        padding: 40px 40px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .Chatbot {
+        padding: 60px 60px;
+    }
+}
