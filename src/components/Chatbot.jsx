@@ -7,9 +7,12 @@ import { fetchListings } from "../api/realEstateAPI.js";
 import { parseInput } from "../../utils/parseInput.js";
 import { convertToPois } from "../../utils/convertToPois.js";
 import { fetchMessages } from "../api/OpenAI.js";
-import Maps from "./Map.jsx";
+import { lazy, Suspense } from "react";
+const Maps = lazy(() => import("./Map.jsx"));
 import { APIProvider } from "@vis.gl/react-google-maps";
-const apiKey = import.meta.env.VITE_APP_GOOGLEMAPS_API_KEY
+import axios from "axios";
+const { data } = await axios.get("http://localhost:5000/maps-key");
+const apiKey = data.key;
 function Chatbot() {
   const [messages, setMessages] = useState(() => {
   const saved = localStorage.getItem("chatMessages");
@@ -35,7 +38,7 @@ function Chatbot() {
 }, []);
    // Save messages to localStorage whenever they change
     useEffect(() => {
-        localStorage.setItem("chatMessages", JSON.stringify(messages))
+        localStorage.setItem("chatMessages", JSON.stringify(messages));
     }, [messages]);
 
     async function handleUserMessage(input) {
@@ -114,11 +117,13 @@ function Chatbot() {
             <h2>Loading...</h2>
           ) : <> 
                <MessageList messages={messages} setMessages={setMessages}/>
+               <Suspense fallback={<div>Loading...</div>}>
                <APIProvider apiKey={apiKey}>
                   <div style={{ height: "350px", width: "700px" }}>
                     <Maps result={result} pois={pois}/>
                  </div>
                </APIProvider>
+               </Suspense>
               <PropertyResults properties={properties}/>
               <InputBox onSendMessage={handleUserMessage}/>
            </>
