@@ -30,3 +30,78 @@
   background-color: #1741b6;
 }
 
+@media (max-width: 460px) {
+  .InputBox {
+    flex-direction: column;
+    gap: 4px; 
+    padding: 6px;
+  }
+
+  .InputBox input,
+  .InputBox button {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+
+  .InputBox button {
+    border-radius: 6px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .InputBox {
+    flex-direction: column;
+    gap: 6px; 
+    padding: 8px;
+  }
+
+  .InputBox input,
+  .InputBox button {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+
+  .InputBox button {
+    border-radius: 6px; 
+  }
+}
+
+@media (max-width: 1024px) {
+  .InputBox {
+    flex-direction: column;
+    gap: 8px; 
+    padding: 10px;
+  }
+
+  .InputBox input,
+  .InputBox button {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 10px 14px;
+  }
+
+  .InputBox button {
+    border-radius: 6px; 
+  }
+}
+
+@media (min-width: 1280px) {
+  .InputBox {
+    flex-direction: column;
+    gap: 10px; 
+    padding: 12px;
+  }
+
+  .InputBox input,
+  .InputBox button {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 8px 0px;
+  }
+
+  .InputBox button {
+    border-radius: 6px; 
+  }
+}

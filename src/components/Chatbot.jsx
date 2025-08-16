@@ -2,7 +2,7 @@ import MessageList from "./MessageList.jsx";
 import InputBox from "./InputBox.jsx";
 import PropertyResults from "./PropertyResults.jsx";
 import "./Chatbot.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { fetchListings } from "../api/realEstateAPI.js";
 import { parseInput } from "../../utils/parseInput.js";
 import { convertToPois } from "../../utils/convertToPois.js";
@@ -11,41 +11,86 @@ import Maps from "./Map.jsx";
 import { APIProvider } from "@vis.gl/react-google-maps";
 const apiKey = import.meta.env.VITE_APP_GOOGLEMAPS_API_KEY
 function Chatbot() {
-  const [messages, setMessages] = useState([
-    { id: 1, sender: "user", text: "I'm looking for a 2-bedroom in Toronto" },
-    { id: 2, sender: "bot", text: "Sure! Do you have a price range?" }
-    ]);
+  const [messages, setMessages] = useState(() => {
+  const saved = localStorage.getItem("chatMessages");
+  return saved ? JSON.parse(saved) : [
+    { id: 1, sender: "user", text: "I'm looking for homes in Canada" },
+    { id: 2, sender: "bot", text: "Sure! What kind of homes do you like and where in Canada?" }
+  ];
+});
     
     const [properties, setProperties] = useState([]);
-
     const [result, setResult] = useState(null);
-
     const [pois, setPois] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    // Chat History(saves user message)
+
+    // Load messages from localStorage
+     useEffect(() => {
+  const savedMessages = localStorage.getItem("chatMessages");
+  if (savedMessages) {
+    setMessages(JSON.parse(savedMessages));
+  } 
+}, []);
+   // Save messages to localStorage whenever they change
+    useEffect(() => {
+        localStorage.setItem("chatMessages", JSON.stringify(messages))
+    }, [messages]);
+
     async function handleUserMessage(input) {
-      // Update User Messages 
-     const newUserMessage = {
-      id: messages.length + 1, sender: 'user', text: input
-     };
-     const newMessages = [...messages, newUserMessage];
-     // Get ChatGPT's response
-     const response = await fetchMessages(newMessages);
-     const botResponse = {
-      id: newMessages.length + 1, sender: 'bot', text: response
-     };
-     const updatedMessages = [...newMessages, botResponse]
-     setMessages(updatedMessages);
+       setLoading(true);
+      try {
+        // ✅ Add user message using functional update to avoid async issues
+      setMessages(prev => [...prev, { id: prev.length + 1, sender: "user", text: input }]);
+
+      // Get ChatGPT response
+      const botResponse = await fetchMessages([...messages, { id: messages.length + 1, sender: "user", text: input }]);
+      setMessages(prev => [...prev, { id: prev.length + 1, sender: "bot", text: botResponse }]);
+
     // Parse User Input
-      const parsedInput = parseInput(input)
-      setResult(parsedInput);
+      const parsedInput = handleParsedResult(input);
       if (!parsedInput.location) {
         return;
        }
        // Fetch listings and convert lat/lng to Pois so Markers can render on Maps
+      await fetchandSetProperties(parsedInput);
+      } catch (err) {
+        console.log("Error handling user messages")
+      } 
+      finally {
+          setLoading(false);
+      }
+    }
+   
+    function addUserMessage(messages, input) {
+     return [...messages, {
+      id: messages.length + 1, sender: 'user', text: input
+     }];
+    }
+
+  async function getBotResponse(messages) {
+    const response = await fetchMessages(messages);
+    return { id: messages.length + 1, sender: 'bot', text: response};
+  }
+    function handleParsedResult(input) {
+      const parsedInput = parseInput(input);
+      if (!parsedInput.location) {
+        return;
+       }
+      setResult(parsedInput);
+      return parsedInput;
+    }
+     
+    async function fetchandSetProperties(parsedInput) {
       const allListings = await fetchListings();
       const poisData = convertToPois(allListings); // pure conversion here
       setPois(poisData);
-      // Filter user input by location, price, bedrooms, bathrooms
-      const filtered = allListings.filter((listing) => {
+       const filtered = filterListings(allListings, parsedInput);
+       setProperties(filtered);
+    }
+    function filterListings(listings, parsedInput) {
+       return listings.filter((listing) => {
         const matchesLocation = listing.location.toLowerCase().includes(parsedInput.location.toLowerCase());
           let matchesPrice = true;
     if (parsedInput.priceRange !== null) {
@@ -59,21 +104,25 @@ function Chatbot() {
     }
 
     return matchesLocation && matchesPrice && matchesBedrooms;
-      });
-      setProperties(filtered);
+    });
     }
     return (
       <div>
         <h1>How can we help you today?</h1>
         <div className="Chatbot">
-          <MessageList messages={messages} setMessages={setMessages}/>
-           <APIProvider apiKey={apiKey}>
-            <div style={{ height: "350px", width: "400px" }}>
-          <Maps result={result} pois={pois}/>
-            </div>
-          </APIProvider>
-          <PropertyResults properties={properties}/>
-           <InputBox onSendMessage={handleUserMessage}/>
+          {loading ? (
+            <h2>Loading...</h2>
+          ) : <> 
+               <MessageList messages={messages} setMessages={setMessages}/>
+               <APIProvider apiKey={apiKey}>
+                  <div style={{ height: "350px", width: "700px" }}>
+                    <Maps result={result} pois={pois}/>
+                 </div>
+               </APIProvider>
+              <PropertyResults properties={properties}/>
+              <InputBox onSendMessage={handleUserMessage}/>
+           </>
+         }
         </div>
         </div>
     )
