@@ -11,7 +11,7 @@ import { lazy, Suspense } from "react";
 const Maps = lazy(() => import("./Map.jsx"));
 import { APIProvider } from "@vis.gl/react-google-maps";
 import axios from "axios";
-const { data } = await axios.get("http://localhost:5000/maps-key");
+const { data } = await axios.get("https://real-estate-agent-backend-soq6.onrender.com/maps-key");
 const apiKey = data.key;
 function Chatbot() {
   const [messages, setMessages] = useState(() => {
