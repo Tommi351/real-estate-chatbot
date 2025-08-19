@@ -4,6 +4,7 @@ export function parseInput(text) {
     let location = null;
     let priceRange = null;
     let bedrooms = null;
+    let bathrooms = null;
     for (let city of cities) {
         if (normalized.includes(city.toLowerCase())) {
             location = city;
@@ -24,9 +25,15 @@ export function parseInput(text) {
     bedrooms = Number(bedMatch[1]);
   }
 
+  // Extract bathrooms (example: 2-bathroom, 3 bathrooms)
+  const bathMatch = normalized.match(/(\d+)[-\s]?bath/);
+  if (bathMatch) {
+    bathrooms = Number(bathMatch[1]);
+  }
+
   if (!location) {
             console.log("Sorry, this city is not avaliable");
         }
 
-    return { location, priceRange, bedrooms };
+    return { location, priceRange, bedrooms, bathrooms };
 }; 
