@@ -1,12 +1,24 @@
-# React + Vite
+# Real Estate Agent
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An intelligent real estate assistant that helps users find their dream home based on location, price range, bedroom/bathroom count — integrated with GPT for smart conversations and Google Maps for live visuals.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- Dynamic conversation with GPT
+- Map visualizations based on user queries
+- Backend orchestration of listings, chat, and maps
+- Clean frontend with responsive UI
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚙️ Tech Stack
+- React, Node.js, Express, @vis.gl/react-google-maps, OpenAI API
 
-## Expanding the ESLint configuration
+## 🛠️ Setup
+1. `git clone <repo>`
+2. `npm install`
+3. Add `.env` with `OPENAI_API_KEY` and `GOOGLEMAPS_API_KEY`
+4. Run frontend and backend separately
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🤖 AI Logic
+GPT handles incoming user messages and returns context-aware listing requests.
+
+## 🗺️ Map Logic
+Google Maps dynamatically renders to location based on user messages parsed from GPT and matched listings.
