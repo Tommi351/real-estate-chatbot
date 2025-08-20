@@ -10,8 +10,8 @@ import { fetchMessages } from "../api/OpenAI.js";
 import { lazy, Suspense } from "react";
 const Maps = lazy(() => import("./Map.jsx"));
 import { APIProvider } from "@vis.gl/react-google-maps";
-import axios from "axios";
-const { data } = await axios.get("https://real-estate-agent-backend-soq6.onrender.com/maps-key");
+import axios from "axios"; 
+const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/maps-key`);
 const apiKey = data.key;
 function Chatbot() {
   const [messages, setMessages] = useState(() => {
@@ -41,6 +41,15 @@ function Chatbot() {
         localStorage.setItem("chatMessages", JSON.stringify(messages));
     }, [messages]);
 
+    function clearHistory() {
+      if (window.confirm("Are you sure you want to clear chat history?")) {
+      localStorage.removeItem("chatMessages")
+      setMessages([{ id: 1, sender: "user", text: "I'm looking for homes in Canada" },
+    { id: 2, sender: "bot", text: "Sure! What kind of homes do you like and where in Canada?" }
+   ]);
+      alert("Chat history cleared!");
+      }
+    }
     async function handleUserMessage(input) {
        setLoading(true);
       try {
@@ -117,6 +126,7 @@ function Chatbot() {
             <h2>Loading...</h2>
           ) : <> 
                <MessageList messages={messages} setMessages={setMessages}/>
+               <button onClick={clearHistory}>Clear History</button>
                <Suspense fallback={<div>Loading...</div>}>
                <APIProvider apiKey={apiKey}>
                   <div style={{ height: "350px", width: "700px" }}>
@@ -124,7 +134,7 @@ function Chatbot() {
                  </div>
                </APIProvider>
                </Suspense>
-              <PropertyResults properties={properties}/>
+              <PropertyResults properties={properties}/> 
               <InputBox onSendMessage={handleUserMessage}/>
            </>
          }

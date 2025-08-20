@@ -6,7 +6,9 @@ const gptRoutes = require("./routes/gpt");
 const app = express();
 const port = process.env.PORT || 5000;
 app.use(cors({
-  origin: 'https://real-estate-chatbot-3qd1.onrender.com', // 👈 allow your frontend to talk to backend
+  origin: ['https://real-estate-chatbot-3qd1.onrender.com', 
+    'http://localhost:5173'
+  ] // 👈 allow your frontend to talk to backend
 }));
 app.use(express.json());
 // Test route

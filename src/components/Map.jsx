@@ -27,7 +27,7 @@ function Maps({result, pois}) {
     
     return (
     <Map
-      zoom={13}
+      zoom={11}
       center={center}
       mapId='f402cf4a9009e9a39f89b1e0'
       onCameraChanged={ (ev) =>
