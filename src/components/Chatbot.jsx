@@ -121,6 +121,7 @@ function Chatbot() {
     return (
       <div>
         <h1>How can we help you today?</h1>
+        <h2>Note: Currently optimized for Canadian cities (demo purposes). Can be expanded globally on request</h2>
         <div className="Chatbot">
           {loading ? (
             <h2>Loading...</h2>
